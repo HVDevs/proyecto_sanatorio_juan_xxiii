@@ -1,379 +1,405 @@
 <!--Documento HTML principal, dentro estan los demas-->
-<!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task Firebase Node</title>
 
+    <!-- Las plantillas CSS -->
+    <!-- ******************************************************************* -->
+
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lumen/bootstrap.min.css">-->
-    <link rel="stylesheet" href="main.css">
-
+    <link rel="stylesheet" href="main.css" />
     <!-- Bootstrap js -->
-    <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/bootstrap%404.6.1/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="../cdn.jsdelivr.net/npm/bootstrap%404.6.1/dist/css/bootstrap.min.css"
+    />
     <!--script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script-->
-    <script src="../cdn.jsdelivr.net/npm/popper.js%401.16.1/dist/umd/popper.min.js"></script>
-    <script src="../cdn.jsdelivr.net/npm/bootstrap%404.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- Favicon  -->
-    <link rel="icon" href="img/favicon.ico">
-
+    <link rel="icon" href="img/favicon.ico" />
     <!-- Core Style CSS -->
-    <link rel="stylesheet" href="css/core-style.css">
-
+    <link rel="stylesheet" href="css/core-style.css" />
     <!-- San CSS -->
-    <link rel="stylesheet" href="css/style_san.css">
+    <link rel="stylesheet" href="css/style_san.css" />
+    
+    <!-- ******************************************************************* -->
 
-    <style type="text/css">
-        /* Small devices (tablets, 768px and up) */
-        @media (max-width: 1200px) {
-            .btn_tw {
-                text-align: center;
-            }
-            .btn_ws {
-                text-align: center;
-            }
-            #btn_acc_tw {
-                width: 300px; height: 70px; font-size: 20px; padding: 5px; border-radius: 7px;box-shadow: 2px 2px 5px #000; padding-top: 10px;
-            }
-            #btn_acc_wp {
-                width: 300px; height: 70px; font-size: 20px; padding: 5px; border-radius: 7px;box-shadow: 2px 2px 5px #000; padding-top: 10px;
-            }
-        }
-
-        @media (min-width: 992px) {
-            .btn_tw {
-                text-align: right;
-            }
-            .btn_ws {
-                text-align: left;
-            }
-            #btn_acc_tw {
-                width: 300px; height: 70px; font-size: 20px; padding: 5px; border-radius: 7px;box-shadow: 2px 2px 5px #000;
-            }
-            #btn_acc_wp {
-                width: 300px; height: 70px; font-size: 20px; padding: 5px; border-radius: 7px;box-shadow: 2px 2px 5px #000;
-            }
-            
-        }
-
-        /* Small devices (tablets, 768px and up) */
-        @media (max-width: 1000px) {
-            .img_log {
-                /*width: 220px;*/
-            }
-        }
-
-        @media (min-width: 992px) {
-            .img_log {
-                width: 220px;
-            }
-        }   
-        .content-box {
-            box-sizing: content-box;
-        }
-        .border-box {
-            box-sizing: border-box;
-            border: 2px solid #75AFAF;
-            padding: 10px;
-            height: 100px;
-            text-align: center;
-            width: 100%;
-            margin: 10px;          
-        }
-
-        .border-box-2 {
-            box-sizing: border-box;
-            border: 2px solid #1F508F;
-            padding: 10px;
-            height: 100px;
-            text-align: center;
-            width: 100%;
-            margin: 10px;
-        }
-    </style>
-
-</head>
-<body>
+  </head>
+  <body>
 
     <!-- Preloader de carga -->
     <div id="preloader">
-        <div class="medica-load"></div>
-        <img src="img/favicon.ico" alt="logo">
+      <div class="medica-load"></div>
+      <img src="img/favicon.ico" alt="logo" />
     </div>
 
     <header class="header-area">
-        <!-- Top Header Area -->
-        <div class="top-header-area ">
-            <div class="container h-100">
-                <div class="row h-100">
-                    <div class="col-12 h-100">
-                        <table width="100%">
-                            <tr>
-                                <td align="center">
-                                    <a href="index.html"><img class="img_log" src="img/menu/_logo.png" alt="Logo" width="300px"></a>           
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
+      <!-- Top Header Area -->
+      <div class="top-header-area">
+        <div class="container h-100">
+          <div class="row h-100">
+            <div class="col-12 h-100">
+              <table width="100%">
+                <tr>
+                  <td align="center">
+                    <a href="index.html"><img
+                        class="img_log"
+                        src="img/menu/_logo.png"
+                        alt="Logo"
+                        width="300px"
+                      /></a>
+                  </td>
+                </tr>
+              </table>
             </div>
-            
+          </div>
         </div>
-        <!-- Main Header Area -->
-        <div class="main-header-area" id="stickyHeader">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12 h-100">
-                        <div class="main-menu h-100">
-                            <nav class="navbar h-100 navbar-expand-lg">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medicaMenu" aria-controls="medicaMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
 
-                                <div class="collapse navbar-collapse" id="medicaMenu">
-                                    <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item"  style="padding-top: 12px;"> <!--li class="nav-item active"-->
-                                            <a class="nav-link" href="index.html">INICIO <span class="sr-only">(current)</span></a>
-                                        </li>
-                                        <li class="nav-item dropdown"  style="padding-top: 12px;">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">NUESTRO SANATORIO</a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">                                                
-                                                <a class="dropdown-item" href="_nuestro_sanatorio.html">El Sanatorio</a>
-                                                <a class="dropdown-item" href="_autoridades.html">Autoridades</a>
-                                                <a class="dropdown-item" href="_galeria_fotos.html">Galeria</a>
-                                                <!--a class="dropdown-item" href="#myModal" data-toggle="modal" data-target="#modalWeb_prox">Como llegar</a-->
-                                            </div>
-                                        </li>
-                                        <li class="nav-item dropdown" style="padding-top: 12px;">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PACIENTE</a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">                                                
-                                                <a class="dropdown-item" href="_paciente_acceso_portal.html">Turnos</a>
-                                                <a class="dropdown-item" href="_paciente_horarios_atencion.html">Horarios de atención</a>
-                                                <a class="dropdown-item" href="_internacion.html">INTERNACIÓN</a>
-                                                <a class="dropdown-item" href="_servicios_medicos.html">SERVICIOS MÉDICOS</a>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item dropdown" style="padding-top: 12px;">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DOCENCIA E INVESTIGACIÓN</a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">                                                
-                                                <a class="dropdown-item" href="_comite_docencia.html">Comité</a>
-                                                <a class="dropdown-item" href="_residencia.html">Residencia</a>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item" style="padding-top: 12px;">
-                                            <a class="nav-link" href="_contact.html">CONTACTO</a>
-                                        </li>
-                                        <li style="margin: 3px; padding: 7px; background-color: #1F508F;"><a href="#myModal" data-toggle="modal" data-target="#modalWsp"  style="color: #fff">WHATSAPP</a></li>
-                                        <li style="margin: 3px; padding: 7px; background-color: #5A8483;"><a href="http://juanxxiii.datatech.com.ar/" target="_blank" style="color: #fff">PORTAL DEL PACIENTE</a></li>
-                                    </ul>
-                                </div>
-                            </nav>
+      </div>
+      <!-- Main Header Area -->
+      <div class="main-header-area" id="stickyHeader">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12 h-100">
+              <div class="main-menu h-100">
+                <nav class="navbar h-100 navbar-expand-lg">
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#medicaMenu"
+                    aria-controls="medicaMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  ><i class="fa fa-bars"></i> Menu</button>
+
+                  <div class="collapse navbar-collapse" id="medicaMenu">
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item" style="padding-top: 12px;">
+                        <!--li class="nav-item active"-->
+                        <a class="nav-link" href="index.html">INICIO
+                          <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item dropdown" style="padding-top: 12px;">
+                        <a
+                          class="nav-link dropdown-toggle"
+                          href="#"
+                          id="navbarDropdown"
+                          role="button"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >NUESTRO SANATORIO</a>
+                        <div
+                          class="dropdown-menu"
+                          aria-labelledby="navbarDropdown"
+                        >
+                          <a
+                            class="dropdown-item"
+                            href="_nuestro_sanatorio.html"
+                          >El Sanatorio</a>
+                          <a
+                            class="dropdown-item"
+                            href="_autoridades.html"
+                          >Autoridades</a>
+                          <a
+                            class="dropdown-item"
+                            href="_galeria_fotos.html"
+                          >Galeria</a>
+                          <!--a class="dropdown-item" href="#myModal" data-toggle="modal" data-target="#modalWeb_prox">Como llegar</a-->
                         </div>
-                    </div>
-                </div>
+                      </li>
+                      <li class="nav-item dropdown" style="padding-top: 12px;">
+                        <a
+                          class="nav-link dropdown-toggle"
+                          href="#"
+                          id="navbarDropdown"
+                          role="button"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >PACIENTE</a>
+                        <div
+                          class="dropdown-menu"
+                          aria-labelledby="navbarDropdown"
+                        >
+                          <a
+                            class="dropdown-item"
+                            href="_paciente_acceso_portal.html"
+                          >Turnos</a>
+                          <a
+                            class="dropdown-item"
+                            href="_paciente_horarios_atencion.html"
+                          >Horarios de atención</a>
+                          <a
+                            class="dropdown-item"
+                            href="_internacion.html"
+                          >INTERNACIÓN</a>
+                          <a
+                            class="dropdown-item"
+                            href="_servicios_medicos.html"
+                          >SERVICIOS MÉDICOS</a>
+                        </div>
+                      </li>
+                      <li class="nav-item dropdown" style="padding-top: 12px;">
+                        <a
+                          class="nav-link dropdown-toggle"
+                          href="#"
+                          id="navbarDropdown"
+                          role="button"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >DOCENCIA E INVESTIGACIÓN</a>
+                        <div
+                          class="dropdown-menu"
+                          aria-labelledby="navbarDropdown"
+                        >
+                          <a
+                            class="dropdown-item"
+                            href="_comite_docencia.html"
+                          >Comité</a>
+                          <a
+                            class="dropdown-item"
+                            href="_residencia.html"
+                          >Residencia</a>
+                        </div>
+                      </li>
+                      <li class="nav-item" style="padding-top: 12px;">
+                        <a class="nav-link" href="_contact.html">CONTACTO</a>
+                      </li>
+                      <li
+                        style="margin: 3px; padding: 7px; background-color: #1F508F;"
+                      ><a
+                          href="#myModal"
+                          data-toggle="modal"
+                          data-target="#modalWsp"
+                          style="color: #fff"
+                        >WHATSAPP</a></li>
+                      <li
+                        style="margin: 3px; padding: 7px; background-color: #5A8483;"
+                      ><a
+                          href="http://juanxxiii.datatech.com.ar/"
+                          target="_blank"
+                          style="color: #fff"
+                        >PORTAL DEL PACIENTE</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </header>
     <!-- ***** Header Area End ***** -->
 
     <!--Section-->
-    <section class="breadcumb-area bg-img " style="background-image: url(img/bar.png); height: 130px;">
-        <div class="container h-150">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcumb-content">
-                        <!-- Title -->
-                        <h3 class="breadcumb-title" style="padding-top: 50px;">SERVICIOS MÉDICOS</h3>
-                    </div>
-                </div>
+    <section
+      class="breadcumb-area bg-img"
+      style="background-image: url(img/bar.png); height: 130px;"
+    >
+      <div class="container h-150">
+        <div class="row h-100 align-items-center">
+          <div class="col-12">
+            <div class="breadcumb-content">
+              <!-- Title -->
+              <h3 class="breadcumb-title" style="padding-top: 50px;">SERVICIOS
+                MÉDICOS</h3>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <div class="container p-4">
-        <div class="row">
-            {{{body}}}
-        </div>
+      <div class="row">
+        <!-- ******************************************************************* -->
+
+
+        <!-- Aqui se renderiza el contenido del index.js (carpeta views) -->
+
+        {{{body}}}
+
+        <!-- Aqui se renderiza el contenido del index.js (carpeta views) -->
+
+
+        <!-- ******************************************************************* -->
+      </div>
     </div>
-    
 
-        <!-- ***** Footer Area Start ***** -->
+    <!-- ***** Footer Area Start ***** -->
     <footer class="footer-area">
-        <!-- Main Footer Area -->
-        <div class="main-footer-area section_padding_100 bg-default">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-sm-6 col-xl-3">
-                        <div class="footer-widget-area">
-                            <!--div class="footer-logo"-->
-                            <div>
-                                <img src="img/menu/_logo.png" alt="Logo" width="250px">
-                            </div>
-                            <p style="color: black;">En Sanatorio Juan XXIII tomamos todas las medidas y cumplimos con los protocolos necesarios para que tengas una atención segura. <br>
-                            Esperamos que al ingresar también las cumplas para seguir cuidándonos entre todos.<br>
-                            <b>Te cuidamos en cada momento</b></p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-xl-3">
-                        <div class="footer-widget-area">
-                            <div class="widget-title">
-                                <div class="boton_3">
-                                    <h6 style="color: black;">Accesos internos</h6>
-                                </div>
-                            </div>
-                            <ul>
-                                <li><a href="http://sanatoriojuanxxiii.com:58082/" target="_blank" style="color: black;">Extranet</a></li>
-                                <li><a href="https://mail.sanatoriojuanxxiii.com.ar/" target="_blank" style="color: black;">Correo corporativo</a></li>
-                                <li><a href="http://sanatoriojuanxxiii.com:57085/" target="_blank" style="color: black;">Portal Instituciones</a></li>
-                                <li><a href="http://sanatoriojuanxxiii.com:58087/" target="_blank" style="color: black;">Documentación anexa</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-xl-3">
-                        <div class="footer-widget-area">
-                            <div class="widget-title">
-                                <div class="boton_3">
-                                    <h6 style="color: black;">Accesos rápidos</h6>
-                                </div>
-                            </div>
-                            <ul>
-                                <li><a href="#myModal" data-toggle="modal" data-target="#modalWeb" style="color: black;">Portal del paciente</a></li>
-                                <li><a href="_servicios_medicos.html" style="color: black;">Especialidades médicas</a></li>
-                                <li><a href="_paciente_horarios_atencion.html" style="color: black;">Horarios de visita</a></li>
-                                <li><a href="_contact.html" style="color: black;">Contacto</a></li>
-                            </ul>
-                        </div>
-                        <div class="widget-contact-info">
-                            <p style="color: black;">
-                                <a href="https://www.facebook.com/Sanatorio-Juan-XXIII-264419227620051" target="_blank" style="color: black;">
-                                    <img src="img/icons/Icono-F.png" width="40px">
-                                </a>
-                                <a href="https://www.youtube.com/channel/UCFYGa5uF07laUE3Bp7qP-GQ" target="_blank" style="color: black;">
-                                    <img src="img/icons/Icono-Y.png" width="40px">
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-xl-3">
-                        <div class="footer-widget-area">
-                            <div class="widget-title">
-                                <div class="boton_3">
-                                    <h6 style="color: black;">Contacto</h6>
-                                </div>
-                            </div>
-
-                            <div class="widget-contact">
-                                <!-- Single Contact Info -->
-                                <div class="widget-single-contact d-flex align-items-center">
-                                    <div class="widget-contact-info">
-                                        <p style="color: black;">Horario administrativo de consultorios externos <br>Lun. a vier. 08:00hs a 20:00hs</p>
-                                    </div>
-                                </div>
-                                <!-- Single Contact Info -->
-                                <div class="widget-single-contact d-flex align-items-center">
-                                    <div class="widget-contact-info">
-                                        <p style="color: black;">Buenos Aires 1429 <br>Gral Roca | Rio Negro | Patagonia Argentina</p>
-                                    </div>
-                                </div>
-                                <!-- Single Contact Info -->
-                                <div class="widget-single-contact d-flex align-items-center">
-                                    <div class="widget-contact-info">
-                                        <p style="color: black;"><img src="img/icons/Icono-W.png" width="25%">+54 298-440 3805</p>
-                                    </div>
-                                </div>
-                                <div class="widget-single-contact d-flex align-items-center">
-                                    <div class="widget-contact-info">
-                                    <!--div-->
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <img src="img/icons/Icono-T.png" width="80%"></td>
-                                                <td>
-                                                    <p style="color: black;">0298-4430131</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td><p style="color: black;">0298-4430132</p></td>
-                                            </tr>
-                                        </table>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <!-- Main Footer Area -->
+      <div class="main-footer-area section_padding_100 bg-default">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="footer-widget-area">
+                <!--div class="footer-logo"-->
+                <div>
+                  <img src="img/menu/_logo.png" alt="Logo" width="250px" />
                 </div>
+                <p style="color: black;">En Sanatorio Juan XXIII tomamos todas
+                  las medidas y cumplimos con los protocolos necesarios para que
+                  tengas una atención segura.
+                  <br />
+                  Esperamos que al ingresar también las cumplas para seguir
+                  cuidándonos entre todos.<br />
+                  <b>Te cuidamos en cada momento</b></p>
+              </div>
             </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="footer-widget-area">
+                <div class="widget-title">
+                  <div class="boton_3">
+                    <h6 style="color: black;">Accesos internos</h6>
+                  </div>
+                </div>
+                <ul>
+                  <li><a
+                      href="http://sanatoriojuanxxiii.com:58082/"
+                      target="_blank"
+                      style="color: black;"
+                    >Extranet</a></li>
+                  <li><a
+                      href="https://mail.sanatoriojuanxxiii.com.ar/"
+                      target="_blank"
+                      style="color: black;"
+                    >Correo corporativo</a></li>
+                  <li><a
+                      href="http://sanatoriojuanxxiii.com:57085/"
+                      target="_blank"
+                      style="color: black;"
+                    >Portal Instituciones</a></li>
+                  <li><a
+                      href="http://sanatoriojuanxxiii.com:58087/"
+                      target="_blank"
+                      style="color: black;"
+                    >Documentación anexa</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="footer-widget-area">
+                <div class="widget-title">
+                  <div class="boton_3">
+                    <h6 style="color: black;">Accesos rápidos</h6>
+                  </div>
+                </div>
+                <ul>
+                  <li><a
+                      href="#myModal"
+                      data-toggle="modal"
+                      data-target="#modalWeb"
+                      style="color: black;"
+                    >Portal del paciente</a></li>
+                  <li><a
+                      href="_servicios_medicos.html"
+                      style="color: black;"
+                    >Especialidades médicas</a></li>
+                  <li><a
+                      href="_paciente_horarios_atencion.html"
+                      style="color: black;"
+                    >Horarios de visita</a></li>
+                  <li><a
+                      href="_contact.html"
+                      style="color: black;"
+                    >Contacto</a></li>
+                </ul>
+              </div>
+              <div class="widget-contact-info">
+                <p style="color: black;">
+                  <a
+                    href="https://www.facebook.com/Sanatorio-Juan-XXIII-264419227620051"
+                    target="_blank"
+                    style="color: black;"
+                  >
+                    <img src="img/icons/Icono-F.png" width="40px" />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/channel/UCFYGa5uF07laUE3Bp7qP-GQ"
+                    target="_blank"
+                    style="color: black;"
+                  >
+                    <img src="img/icons/Icono-Y.png" width="40px" />
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+              <div class="footer-widget-area">
+                <div class="widget-title">
+                  <div class="boton_3">
+                    <h6 style="color: black;">Contacto</h6>
+                  </div>
+                </div>
+
+                <div class="widget-contact">
+                  <!-- Single Contact Info -->
+                  <div class="widget-single-contact d-flex align-items-center">
+                    <div class="widget-contact-info">
+                      <p style="color: black;">Horario administrativo de
+                        consultorios externos
+                        <br />Lun. a vier. 08:00hs a 20:00hs</p>
+                    </div>
+                  </div>
+                  <!-- Single Contact Info -->
+                  <div class="widget-single-contact d-flex align-items-center">
+                    <div class="widget-contact-info">
+                      <p style="color: black;">Buenos Aires 1429
+                        <br />Gral Roca | Rio Negro | Patagonia Argentina</p>
+                    </div>
+                  </div>
+                  <!-- Single Contact Info -->
+                  <div class="widget-single-contact d-flex align-items-center">
+                    <div class="widget-contact-info">
+                      <p style="color: black;"><img
+                          src="img/icons/Icono-W.png"
+                          width="25%"
+                        />+54 298-440 3805</p>
+                    </div>
+                  </div>
+                  <div class="widget-single-contact d-flex align-items-center">
+                    <div class="widget-contact-info">
+                      <!--div-->
+                      <table>
+                        <tr>
+                          <td>
+                            <img src="img/icons/Icono-T.png" width="80%" /></td>
+                          <td>
+                            <p style="color: black;">0298-4430131</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><p style="color: black;">0298-4430132</p></td>
+                        </tr>
+                      </table>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </footer>
     <!-- ***** Footer Area End ***** -->
 
-    <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647;"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+    <a
+      id="scrollUp"
+      href="#top"
+      style="position: fixed; z-index: 2147483647;"
+    ><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 
-        <style type="text/css">
-    .boton_3{
-        text-decoration: none;
-        /*padding: 70px;*/
-        font-family: arial;
-        text-transform: uppercase;
-        padding-left: 10px;
-        padding-right: 10px;
-        font-weight: 800;
-        font-size: 25px;
-        color: white;
-        background-color: white;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    </style>
+    <!-- Los script que usa la web -->
+    <!-- ******************************************************************* -->
 
-    <script>
-        $(document).ready(function () {
-        $('.modalContainer').load('modal.html');
-        $('.modalContainer_prox').load('modal_prox.html');
-        $('.modalContainer_wsp').load('modal_wsp.html');
-        $('#modalStaff').on('show.bs.modal', function(e) {      
-            var image = $(e.relatedTarget).data('dato-image');
-            var position = $(e.relatedTarget).data('dato-position');
-            var name = $(e.relatedTarget).data('dato-name');
-            var cv = $(e.relatedTarget).data('dato-cv');
-            var parametros = {
-                "image" : image,
-                "position" : position,
-                "name" : name,
-                "cv" : cv
-            }
-            $.ajax({            
-                type: 'POST',
-                url: '/modal_staff.php',
-                data: parametros,
-                success: function(data) {              
-                    $("#Container_staff").html(data);
-                }
-            });      
-        });
-        $('#modalRrhh').on('show.bs.modal', function(e) {   
-            var title = $(e.relatedTarget).data('dato-title');
-            var cont = $(e.relatedTarget).data('dato-cont');
-            var parametros = {
-                "title" : title,
-                "cont" : cont
-            }
-            $.ajax({            
-                type: 'POST',
-                url: '/mnu_rrhh/modal_rrhh.php',
-                data: parametros,
-                success: function(data) {              
-                    $("#Container_rrhh").html(data);
-                }
-            });      
-        });
-        });
-    </script>
-    
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-3.2.1.min.js"></script>
     <!-- Popper js -->
@@ -384,31 +410,16 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
-    
-    
-    <script type="text/javascript">
-        var parametros = {            
-        };
-        $.ajax({
-                data:  parametros,
-                url:   '/_index_top.php',
-                type:  'post',                   
-                success:  function (response) {
-                        $("#contTop").html(response);
-                }
-        });
+    <!-- Main.js -->
+    <script src="js/main.js"></script>
+    <script
+      src="../cdn.jsdelivr.net/npm/popper.js%401.16.1/dist/umd/popper.min.js"
+    ></script>
+    <script
+      src="../cdn.jsdelivr.net/npm/bootstrap%404.6.1/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
-        var parametros = {            
-        };
-        $.ajax({
-                data:  parametros,
-                url:   '/_index_footer.php',
-                type:  'post',                   
-                success:  function (response) {
-                        $("#contFooter").html(response);
-                }
-        });
-    </script>
+    <!-- ******************************************************************* -->
 
-</body>
+  </body>
 </html>

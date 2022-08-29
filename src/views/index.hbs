@@ -1,3 +1,5 @@
+<!-- Esta vista se carga en el main.hbs (ver {{ body }}) -->
+
 <div class="col-md-6 offset-md-3">
     <div class="card">
         <div class="card-header">
@@ -12,7 +14,7 @@
                         {{lastname}} / 
                         {{email}} / 
                         {{phone}}
-                        <a href="/delete-contact/{{@key}}" class="btn btn-danger">
+                        <a href="/delete-contact/{{@key}}" class="btn btn-danger"> <!-- @key es el id de la coleccion -->
                             Delete
                         </a>
                     </li>
@@ -24,7 +26,7 @@
             {{/if}}
         </div>
         <div class="card-footer">
-            <form action="/new-contact" method="post"><!--Definimos la ruta donde se envia la informacion (ver routes) y el metodo (post, get, others-->
+            <form action="/new-contact" method="post"><!-- Definimos la ruta donde se envia la informacion (ver routes) y el metodo (post, get, others) -->
                 <div class="form-group">
                     <input type="text" name="firstname" placeholder="First Name" class="form-control" autofocus>
                     <input type="text" name="lastname" placeholder="Last Name" class="form-control" >
