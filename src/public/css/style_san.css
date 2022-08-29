@@ -1,0 +1,92 @@
+.image_section img{
+            display: block;
+        }
+
+        @media (max-width:800px){
+            .image_section img:first-child{
+                display:none;
+            }
+        }
+
+      .boton_2{
+        text-decoration: none;
+        padding: 70px;
+        font-family: arial;
+        text-transform: uppercase;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: 800;
+        font-size: 25px;
+        color: white;
+        background-color: #56aa99;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .boton_2:hover{
+        color: #9b0e0e;
+        background-color: #6fd3be;
+        text-decoration: none;
+      }
+
+        @media (max-width: 1200px) {
+            .input-icons {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .input-icons i {
+                position: absolute;
+                margin-top: 4px;
+                color: #75AFAF;
+                width: 200%;
+                left: 77%;
+                
+                margin-bottom: 10px;    
+            }
+
+            #input-search {
+              margin-left: 10px;
+              font-size: 17px;
+              border: 9px solid #e7e7e7;
+              border-radius: 7px;
+              background: #fff;
+              height: 70px;
+              width: 95%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .input-icons {
+                width: 200%;
+                margin-bottom: 10px;
+            }
+
+            .input-icons i {
+                position: absolute;
+                margin-top: 2px;
+                color: #75AFAF;
+                width: 200%;
+                right: -80%;
+                margin-bottom: 10px;    
+            }
+
+            #input-search {
+              margin-left: 10px;
+              font-size: 17px;
+              border: 9px solid #e7e7e7;
+              border-radius: 7px;
+              background: #fff;
+              height: 70px;
+              width: 50%;
+              z-index:999;
+            }
+            
+        }   
+          
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
