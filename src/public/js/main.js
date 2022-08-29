@@ -59,3 +59,44 @@ $(document).ready(function () {
         });
     });
 });
+
+//Funciona para el collapse
+$('.accordion-button').on('click', function () {
+    $('.collapse').collapse('hide');
+});
+
+//Esta funcion es para la redimencion entre movil y web
+//esconde el div derecho, y ajusta el acordion para movil
+$(window).resize(function(){
+    var element = document.getElementById('hidden-div')
+    if($(window).width() < 979){
+        for(var i = 1; i < 7; i++){
+            $('#accordion-button'+i).href = '';
+            $('#accordion-button'+i).attr('data-bs-target', '#collapse'+i)
+        }
+        element.style.display = 'none'
+    }else{
+        for(var i = 1; i < 7; i++){
+            $('#accordion-button'+i).href = '#collapseItem'+i;
+            $('#accordion-button'+i).attr('data-bs-target', '')
+        }
+        element.style.display = 'block'
+    }
+});
+
+$(window).width(function(){
+    var element = document.getElementById('hidden-div')
+    if($(window).width() < 979){
+        for(var i = 1; i < 7; i++){
+            $('#accordion-button'+i).href = '';
+            $('#accordion-button'+i).attr('data-bs-target', '#collapse'+i)
+        }
+        element.style.display = 'none'
+    }else{
+        for(var i = 1; i < 7; i++){
+            $('#accordion-button'+i).href = '#collapseItem'+i;
+            $('.accordion-button'+i).attr('data-bs-target', '')
+        }
+        element.style.display = 'block'
+    }
+});

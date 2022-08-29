@@ -1,40 +1,335 @@
 <!-- Esta vista se carga en el main.hbs (ver {{ body }}) -->
 
-<div class="col-md-6 offset-md-3">
-    <div class="card">
-        <div class="card-header">
-                Task
-            </div>
-        <div class="card-body">
-            {{#if contacts}}
-            <ul class="list-group">
-                {{#each contacts}}
-                    <li class="list-group-item d-flex justify-content-between aling-items-center">
-                        {{firstname}}
-                        {{lastname}} / 
-                        {{email}} / 
-                        {{phone}}
-                        <a href="/delete-contact/{{@key}}" class="btn btn-danger"> <!-- @key es el id de la coleccion -->
-                            Delete
-                        </a>
-                    </li>
-                {{/each}}
-            </ul>
-                
-            {{else}}
-            <h1>No contacts yet</h1>
-            {{/if}}
-        </div>
-        <div class="card-footer">
-            <form action="/new-contact" method="post"><!-- Definimos la ruta donde se envia la informacion (ver routes) y el metodo (post, get, others) -->
-                <div class="form-group">
-                    <input type="text" name="firstname" placeholder="First Name" class="form-control" autofocus>
-                    <input type="text" name="lastname" placeholder="Last Name" class="form-control" >
-                    <input type="text" name="email" placeholder="Email" class="form-control" >
-                    <input type="text" name="phone" placeholder="Phone" class="form-control" >
-                    <button class="btn btn-primary btn-block">Add</button>
-                </div>
-            </form>
-        </div>
+<!-- Para que no entre en conflico con toda la documentacion, los archivos CSS y JS de bootstrap 5 los agregamos aca: -->
+<!-- Css bootstrap 5 -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+/>
+
+<!-- <div class="col-md-6 offset-md-3">
+  <div class="card">
+    <div class="card-header">
+      Task
     </div>
+    <div class="card-body">
+      {{#if contacts}}
+        <ul class="list-group">
+          {{#each contacts}}
+            <li
+              class="list-group-item d-flex justify-content-between aling-items-center"
+            >
+              {{firstname}}
+              {{lastname}}
+              /
+              {{email}}
+              /
+              {{phone}}
+              <a href="/delete-contact/{{@key}}" class="btn btn-danger"> -->
+                <!-- @key es el id de la coleccion -->
+                <!--Delete
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+
+      {{else}}
+        <h1>No contacts yet</h1>
+      {{/if}}
+    </div>
+    <div class="card-footer">
+      <form
+        action="/new-contact"
+        method="post"
+      >-->
+      <!-- Definimos la ruta donde se envia la informacion (ver routes) y el metodo (post, get, others) -->
+        <!--<div class="form-group">
+          <input
+            type="text"
+            name="firstname"
+            placeholder="First Name"
+            class="form-control"
+            autofocus
+          />
+          <input
+            type="text"
+            name="lastname"
+            placeholder="Last Name"
+            class="form-control"
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            class="form-control"
+          />
+          <input
+            type="text"
+            name="phone"
+            placeholder="Phone"
+            class="form-control"
+          />
+          <button class="btn btn-primary btn-block">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+<!-- Le damos un tamaño predefinido al row -->
+<div class="row" style="height: 600px;"> 
+  <div class="col">
+    
+    <!-- Estos sirven para el acordeon en modo movil
+    data-bs-toggle="collapse"
+    data-bs-target="#collapseOne"
+    aria-controls="collapseOne" -->
+    
+    <!-- Start Accordion -->
+    <div class="accordion" id="accordionExample">
+
+        <!-- First Item -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            id="accordion-button1"
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            href="#collapseItem1"
+            aria-controls="collapseOne"
+            aria-expanded="false"
+          >
+            Presentación
+          </button>
+        </h2>
+        <!-- Collapse para el diseño movil -->
+        <div
+          id="collapse1"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>
+              La presentacion va aqui, para celular
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Item -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            id="accordion-button2"
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            href="#collapseItem2"
+            aria-expanded="false"
+          >
+            Equipo Médico
+          </button>
+        </h2>
+        <!-- Collapse para el diseño movil -->
+        <div
+          id="collapse2"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>
+              El equipo medico va aqui, para celular
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third Item -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            id="accordion-button3"
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            href="#collapseItem3"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            Consultorios Externos
+          </button>
+        </h2>
+        <!-- Collapse para el diseño movil -->
+        <div
+          id="collapse3"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>
+              Los consultorios externos va aqui, para celular
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth Item -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            id="accordion-button4"
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            href="#collapseItem4"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            Prestaciones
+          </button>
+        </h2>
+        <!-- Collapse para el diseño movil -->
+        <div
+          id="collapse4"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>
+              Las prestaciones van aqui, para celular
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fifth Item -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            id="accordion-button5"
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            href="#collapseItem5"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            Patologías
+          </button>
+        </h2>
+        <!-- Collapse para el diseño movil -->
+        <div
+          id="collapse5"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>
+              Las patologias van aqui, para celular
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sixth Item -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            id="accordion-button6"
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            href="#collapseItem6"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            Tecnología e Infraestructura
+          </button>
+        </h2>
+        <!-- Collapse para el diseño movil -->
+        <div
+          id="collapse6"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>
+              Las tecnologias e infraestructura va aqui, para celular
+            </strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Accordion -->
+  </div>
+
+
+<!-- A esta columna le agregamos un deplazo lateral -->
+  <div class="col" id="hidden-div" style="height: 80%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;">
+    <!-- Start of collapse -->
+    <div class="collapse" id="collapseItem1">
+    <!-- First Item -->
+      <div class="card card-body">
+        <strong>
+          La presentacion va aqui, para web
+        </strong>
+      </div>
+    </div>
+    <!-- Second Item -->
+    <div class="collapse" id="collapseItem2">
+      <div class="card card-body">
+        <strong>
+          El equipo medico va aqui, para web
+        </strong>
+      </div>
+    </div>
+    <!-- Third Item -->
+    <div class="collapse" id="collapseItem3">
+      <div class="card card-body">
+        <strong>
+          Los consultorios externos van aqui, para web
+        </strong>
+      </div>
+    </div>
+
+    <div class="collapse" id="collapseItem4">
+      <div class="card card-body">
+        <strong>
+          Las prestaciones van aqui, para web
+        </strong>
+      </div>
+    </div>
+
+    <div class="collapse" id="collapseItem5">
+      <div class="card card-body">
+        Las patologias van aqui, para web
+      </div>
+    </div>
+
+    <div class="collapse" id="collapseItem6">
+      <div class="card card-body">
+        <strong>
+          Las tecnologias e infraestructura van aqui, para web
+        </strong>
+      </div>
+    </div>
+  </div>
+  <!-- End of collapse -->
 </div>
+
+<!-- JS bootstrap 5 -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"
+></script>
